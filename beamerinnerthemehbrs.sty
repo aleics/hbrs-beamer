@@ -1,0 +1,55 @@
+\mode<presentation>
+
+\definecolor{hbrsblue}{RGB}{0,158,224}
+\definecolor{hbrslightgray}{RGB}{236,239,238}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[color=white] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+  \fill[color=hbrslightgray] (0,0) rectangle(2.45,0.3);
+  \fill[color=hbrsblue] (2.55,0) rectangle(\the\paperwidth,0.3);
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+}
+
+\setbeamerfont{title}{shape=\bfseries, size=\large}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+% Title page
+\defbeamertemplate*{title page}{hbrs}[1][]
+{
+
+  \vskip0.4cm%
+  \includegraphics[width=.5\paperwidth]{resources/logo}
+  \vskip0.5cm%
+  \begin{beamercolorbox}[wd=12cm,leftskip=0.25cm,sep=8pt,#1]{title page header}
+    \usebeamerfont{title}\inserttitle\par%
+    \ifx\insertsubtitle\@empty%
+    \else%
+      \vskip0.25em%
+      {\usebeamerfont{subtitle}\insertsubtitle\par}%
+    \fi%
+  \end{beamercolorbox}%
+  \vskip0.2cm
+  \begin{beamercolorbox}[wd=12cm,leftskip=0.5cm,#1]{institute}
+    \usebeamerfont{institute}\insertinstitute%
+  \end{beamercolorbox}
+  \vskip0.75cm%
+  \begin{beamercolorbox}[wd=12cm,leftskip=0.5cm,#1]{author}
+    \usebeamerfont{author}\insertauthor%
+  \end{beamercolorbox}
+   \vskip0.2cm%
+   \begin{beamercolorbox}[wd=12cm,leftskip=0.5cm,#1]{date}
+    \usebeamerfont{date}\insertdate%
+  \end{beamercolorbox}
+  \vfill
+}
+
+\mode
+<all>

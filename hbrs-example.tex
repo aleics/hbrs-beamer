@@ -1,0 +1,56 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{natbib}
+
+\usefonttheme{serif}
+
+%% make bibliography style like article
+\usepackage{natbib}
+
+
+\title{Here comes the title of your project}
+\institute{Your department}
+\subtitle{Your project}
+\date{\today}
+\author{Your name \texttt{your.email@h-brs.de}}
+
+\usetheme{hbrs}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Here comes the title of your project}
+  \framesubtitle{Some theorem to be proven.}
+  \begin{theorem}
+    This is my theorem. \end{theorem}
+  \begin{enumerate}
+    \item<1-| alert@1> Suppose $p$ was this.
+    \item<2-> And $q$ has these properties.
+    \item<3-> Then, this will happen.
+    \item<1-> So the theorem has been proven.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{A longer title}
+  \begin{itemize}
+    \item one
+    \item two
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{References}
+  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+  \bibliography{refs}
+\end{frame}
+
+\end{document}
